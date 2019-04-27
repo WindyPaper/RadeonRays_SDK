@@ -24,6 +24,7 @@ THE SOFTWARE.
 
 #include <string>
 #include <stdexcept>
+#include <iostream>
 
 #ifdef __APPLE__
 #include <OpenCL/OpenCL.h>
@@ -38,6 +39,7 @@ public:
     : std::runtime_error(message)
     , errcode_(errcode)
     {
+		std::cout << "CLW Exception ! " + message << std::endl;
     }
 
     cl_int errcode_;
